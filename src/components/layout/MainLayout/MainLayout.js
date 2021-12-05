@@ -18,7 +18,6 @@ const MainLayout = ({children}) => (
     <Container maxWidth='lg'>
       <Toolbar />
       {children}
-      <h3>test</h3>
     </Container>
   </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import MainLayout from './components/layout/MainLayout/MainLayout';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import MainLayout from './components/layout/MainLayout/MainLayout';
 import Dashboard from './components/views/Dashboard/Dashboard';
 import Login from './components/views/Login/Login';
 import Tables from './components/views/Tables/Tables';
@@ -23,17 +23,17 @@ function App() {
         <ThemeProvider theme={theme}>
           <MainLayout>
             <Routes>
-              <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard} />
-              <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login} />
-              <Route exact path={process.env.PUBLIC_URL + '/tables'} component={Tables} />
-              <Route exact path={process.env.PUBLIC_URL + '/tables/booking/:id'} component={Tables} />
-              <Route exact path={process.env.PUBLIC_URL + '/tables/booking/new'} component={Tables} />
-              <Route exact path={process.env.PUBLIC_URL + '/tables/events/:id'} component={Tables} />
-              <Route exact path={process.env.PUBLIC_URL + '/tables/events/new'} component={Tables} />
-              <Route exact path={process.env.PUBLIC_URL + '/waiter'} component={Waiter} />
-              <Route exact path={process.env.PUBLIC_URL + '/waiter/order/new'} component={Waiter} />
-              <Route exact path={process.env.PUBLIC_URL + '/waiter/order/:id'} component={Waiter} />
-              <Route exact path={process.env.PUBLIC_URL + '/kitchen'} component={Kitchen} />
+              <Route exact path={process.env.PUBLIC_URL + '/login'} element={<Login />} />
+              <Route exact path={process.env.PUBLIC_URL + '/tables'} element={<Tables />} />
+              <Route exact path={process.env.PUBLIC_URL + '/tables/booking/:id'} element={<Tables />} />
+              <Route exact path={process.env.PUBLIC_URL + '/tables/booking/new'} element={<Tables />} />
+              <Route exact path={process.env.PUBLIC_URL + '/tables/events/:id'} element={<Tables />} />
+              <Route exact path={process.env.PUBLIC_URL + '/tables/events/new'} element={<Tables />} />
+              <Route exact path={process.env.PUBLIC_URL + '/waiter'} element={<Waiter />} />
+              <Route exact path={process.env.PUBLIC_URL + '/waiter/order/new'} element={<Waiter />} />
+              <Route exact path={process.env.PUBLIC_URL + '/waiter/order/:id'} element={<Waiter />} />
+              <Route exact path={process.env.PUBLIC_URL + '/kitchen'} element={<Kitchen />} />
+              <Route exact path={`${process.env.PUBLIC_URL}/`} element={<Dashboard />} />
             </Routes>
           </MainLayout>
         </ThemeProvider>
