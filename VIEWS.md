@@ -1,7 +1,7 @@
 # Dashboard
 
 - `/` (strona główna)
-  - statystyki dzisiejszych zamówień (zdale i lokalne)
+  - statystyki dzisiejszych zamówień (zdalne i lokalne)
   - listę rezerwacji i eventów zaplanowanych na dzisiaj
 
 # Logowanie
@@ -34,13 +34,13 @@
 - `/waiter`
   - tabela
     - w wierszach stoliki
-    - w kolumnach różne rodzaje imformacji (status, czas do ostatniej aktywności)
+    - w kolumnach różne rodzaje informacji (status, czas od ostatniej aktywności)
     - w ostatniej kolumnie dostępne akcje dla danego stolika
 - `/waiter/order/new`
   - numer stolika (edytowalny)
   - menu produktów
   - opcje wybranego produktu
-  - zmaówienie (zamówione produkty z opcjami i ceną)
+  - zamówienie (zamówione produkty z opcjami i ceną)
   - kwotę zamówienia
 - `/waiter/order/:id`
  - jak powyższa
