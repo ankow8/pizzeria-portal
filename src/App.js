@@ -4,7 +4,7 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Dashboard from './components/views/Dashboard/Dashboard';
 import Login from './components/views/Login/Login';
 import Tables from './components/views/Tables/Tables';
-import Waiter from './components/views/Waiter/Waiter';
+import Waiter from './components/views/Waiter/WaiterContainer';
 import Kitchen from './components/views/Kitchen/Kitchen';
 import { StylesProvider } from '@material-ui/styles';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
