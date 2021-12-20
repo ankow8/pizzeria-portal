@@ -21,11 +21,12 @@ import Button from '@material-ui/core/Button';
 class Waiter extends React.Component {
   static propTypes = {
     fetchTables: PropTypes.func,
+    fetchStatus: PropTypes.func,
     loading: PropTypes.shape({
       active: PropTypes.bool,
-      error: PropTypes.oneOfType([PropTypes.bool,PropTypes.string]),
+      error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     }),
-    tables: PropTypes.oneOfType([PropTypes.array,PropTypes.object]),
+    tables: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   }
 
   componentDidMount(){
@@ -33,34 +34,35 @@ class Waiter extends React.Component {
     fetchTables();
   }
 
-  renderActions(status) {
+  renderActions(tableId, status) {
+    const { fetchStatus } = this.props;
     switch (status) {
       case 'free':
         return (
           <>
-            <Button>thinking</Button>
-            <Button>new order</Button>
+            <Button onClick={() => fetchStatus(tableId, 'thinking')}>thinking</Button>
+            <Button onClick={() => fetchStatus(tableId, 'new order')}>new order</Button>
           </>
         );
       case 'thinking':
         return (
-          <Button>new order</Button>
+          <Button onClick={() => fetchStatus(tableId, 'new order')}>new order</Button>
         );
       case 'ordered':
         return (
-          <Button>prepared</Button>
+          <Button onClick={() => fetchStatus(tableId, 'prepared')}>prepared</Button>
         );
       case 'prepared':
         return (
-          <Button>delivered</Button>
+          <Button onClick={() => fetchStatus(tableId, 'delivered')}>delivered</Button>
         );
       case 'delivered':
         return (
-          <Button>paid</Button>
+          <Button onClick={() => fetchStatus(tableId, 'paid')}>paid</Button>
         );
       case 'paid':
         return (
-          <Button>free</Button>
+          <Button onClick={() => fetchStatus(tableId, 'free')}>free</Button>
         );
       default:
         return null;
@@ -112,7 +114,7 @@ class Waiter extends React.Component {
                     )}
                   </TableCell>
                   <TableCell>
-                    {this.renderActions(row.status)}
+                    {this.renderActions(row.id, row.status)}
                   </TableCell>
                 </TableRow>
               ))}
